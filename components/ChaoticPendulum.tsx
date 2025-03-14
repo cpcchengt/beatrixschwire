@@ -18,7 +18,7 @@ function ChaoticPendulum() {
   const [initialTheta, setInitialTheta] = useState<number>(Math.PI / 2);
   const [initialPhi, setInitialPhi] = useState<number>(Math.PI / 2);
   const [length, setLength] = useState<number>(200);
-  const [radius, setRadius] = useState<number>(30);
+  const [radius, setRadius] = useState<number>(60);
 
   // 物理参数
   const g: number = 9.81;
@@ -81,8 +81,10 @@ function ChaoticPendulum() {
     // 动态调整长条长度和圆环半径
     const scaledLength = length * scale;
     const scaledRadius = radius * scale;
-    const L1: number = scaledLength / 4;
-    const L2: number = (3 * scaledLength) / 4;
+    // const L1: number = scaledLength / 4;
+    // const L2: number = (3 * scaledLength) / 4;
+    const L2: number = scaledLength / 4;
+    const L1: number = (3 * scaledLength) / 4;
 
     const originX: number = canvas.width / (2 * window.devicePixelRatio);
     const originY: number = canvas.height / (2 * window.devicePixelRatio);
